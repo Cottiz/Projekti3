@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container h2 {
+    background-color: rgb(211, 125, 200);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px; /* Asettaa kaikille korteille saman korkeuden */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: lavender;
+}
+
+.product-list {
+    flex-grow: 1; /* Vie ylimääräinen tila */
+    overflow-y: auto; /* Jos tuotteita on paljon, listaa voi vierittää */
+}
+
+.remove-selected {
+    margin-top: auto;
+    align-self: stretch;
+    background-color: rgb(205, 40, 205);
+    color: white;
+}
+
+.input-group-append {
+    background-color: rgb(108, 176, 224);
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
