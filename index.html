@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ostoslista</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container h2 {
+            background-color: rgb(211, 125, 200);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 500px; /* Asettaa kaikille korteille saman korkeuden */
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: lavender;
+        }
+
+        .product-list {
+            flex-grow: 1; /* Vie ylimääräinen tila */
+            overflow-y: auto; /* Jos tuotteita on paljon, listaa voi vierittää */
+        }
+
+        .remove-selected {
+            margin-top: auto;
+            align-self: stretch;
+            background-color: rgb(205, 40, 205);
+            color: white;
+        }
+
+        .input-group-append {
+            background-color: rgb(108, 176, 224);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Ostoslista</h2>
+    <div class="input-group mb-3">
+        <input type="text" id="productInput" class="form-control" placeholder="Lisää tuote ostoslistalle">
+        <input type="number" id="quantityInput" class="form-control" placeholder="Kappalemäärä" min="1" value="1">
+        <select id="categorySelect" class="form-control">
+            <option value="Valitse luokka">Valitse kategoria</option>
+            <option value="Vihannekset_ja_hedelmät">Vihannekset ja hedelmät</option>
+            <option value="Maitotuotteet">Maitotuotteet</option>
+            <option value="Taloustarvikkeet">Taloustarvikkeet</option>
+            <option value="Liha_ja_kala">Liha ja kala</option>
+            <option value="Leivät_ja_leipomotuotteet">Leivät ja leipomotuotteet</option>
+            <option value="Pastat_ja_riisit_ja_jauhot">Pastat, riisit ja jauhot</option>
+            <option value="Pakasteet">Pakasteet</option>
+            <option value="Säilykkeet">Säilykkeet</option>
+            <option value="Leivonta_ja_mausteet">Leivonta ja mausteet</option>
+            <option value="Juomat">Juomat</option>
+            <option value="Muut">Muut</option>   
+        </select>
+        <div class="input-group-append">
+            <button id="addProduct" class="btn">Lisää</button>
+        </div>
+        <button id="loadProducts" class="btn btn-secondary">Lataa joululista</button>
+    </div>
+
+    <!-- Pääkortit kategorioille -->
+    <div class="row">
+        <div id="Vihannekset_ja_hedelmät" class="category-card card col-md-6 p-3">
+            <img src="vihannekset.jpg" alt="Vihannekset">
+            <h3>Vihannekset ja hedelmät</h3>         
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+    
+        <div id="Maitotuotteet" class="category-card card col-md-6 p-3">
+            <img src="maito.jpg" alt="Maitotuotteet">
+            <h3>Maitotuotteet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+    
+        <div id="Liha_ja_kala" class="category-card card col-md-6 p-3">
+            <img src="liha_ja_kala.jpg" alt="Liha ja kala">
+            <h3>Liha ja kala</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Pakasteet" class="category-card card col-md-6 p-3">
+            <img src="pakasteet.jpg" alt="Pakasteet">
+            <h3>Pakasteet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Säilykkeet" class="category-card card col-md-6 p-3">
+            <img src="säilyke1.jpg" alt="Säilykkeet">
+            <h3>Säilykkeet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Leivonta_ja_mausteet" class="category-card card col-md-6 p-3">
+            <img src="mausteet1.jpg" alt="Leivonta ja mausteet">
+            <h3>Leivonta ja mausteet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Pastat_ja_riisit_ja_jauhot" class="category-card card col-md-6 p-3">
+            <img src="Pastat.jpg" alt="Pastat, riisit ja jauhot">
+            <h3>Pastat, riisit ja jauhot</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Leivät_ja_leipomotuotteet" class="category-card card col-md-6 p-3">
+            <img src="leivät.jpg" alt="Leivät ja leipomotuotteet">
+            <h3>Leivät ja leipomotuotteet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Juomat" class="category-card card col-md-6 p-3">
+            <img src="virvoke1.jpg" alt="Juomat">
+            <h3>Juomat</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Taloustarvikkeet" class="category-card card col-md-6 p-3">
+            <img src="taloustarvikkeet1.jpg" alt="Taloustarvikkeet">
+            <h3>Taloustarvikkeet</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+
+        <div id="Muut" class="category-card card col-md-6 p-3">
+            <img src="Muut.jpg" alt="Muut">
+            <h3>Muut</h3>
+            <div class="product-list"></div>
+            <button class="btn remove-selected">Poista valitut tuotteet</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        // Näytä tai piilota kuva klikkaamalla kategoriaotsikkoa
+        $(".category-card h3").click(function() {
+            $(this).siblings("img").slideToggle(500); // Näyttää/piilottaa kuvan liukuefektillä
+        });
+        loadList();
+
+        // Lisää tuote ostoslistalle
+        $("#addProduct").click(function(){
+            let product = $("#productInput").val().trim();
+            let quantity = parseInt($("#quantityInput").val(), 10);
+            let category = $("#categorySelect").val();
+
+            if(product && category !== "Valitse luokka" && quantity > 0) {
+                addProductToList(product, quantity, category);
+                saveList();
+                console.log(`Tuote lisätty: ${product}, Määrä: ${quantity}, Kategoria: ${category}`);
+                $("#productInput").val('');
+                $("#quantityInput").val('1');
+                $("#categorySelect").val('Valitse luokka');
+            } else {
+                alert('Hupsis! Taisit unohtaa täyttää kentät huolellisesti!');
+            }
+        });
+
+        
+        // Poista valitut tuotteet kategoriasta
+        $(".remove-selected").click(function(){
+            let category = $(this).closest(".category-card").attr("id");
+            $(this).siblings(".product-list").find("input[type='checkbox']:checked").each(function(){
+                $(this).closest(".product-item").fadeOut(2000, function(){ // Poistetaan tuote hitaasti FadeOut-menetelmällä
+                    $(this).remove();
+                });
+            });
+            saveList();
+        });
+    });
+
+    function addProductToList(product, quantity, category){
+    // Luo tuote-elementti piilotettuna
+    let productItem = $(`
+        <div class="product-item" style="display: none;">
+            <input type="checkbox" class="mr-2">
+            <span>${product} (${quantity} kpl)</span>
+        </div>
+    `);
+    
+    // Lisää tuote listaan ja käynnistä fadeIn-efekti
+    $(`#${category} .product-list`).append(productItem);
+    productItem.fadeIn(2000); // hidas fadeIn-efekti 2000millisekuntia
+}
+    
+
+    function saveList(){
+        let list = {};
+        $(".category-card").each(function(){
+            let category = $(this).attr('id');
+            list[category] = [];
+            $(this).find(".product-item").each(function(){
+                let productText = $(this).find("span").text();
+                let [product, quantityText] = productText.split(" (");
+                let quantity = parseInt(quantityText);
+                list[category].push({ name: product.trim(), quantity: quantity });
+            });
+        });
+        localStorage.setItem('shoppingList', JSON.stringify(list));
+    }
+
+    function loadList(){
+        let list = JSON.parse(localStorage.getItem('shoppingList'));
+        if(list){
+            for(let category in list){
+                if (Array.isArray(list[category])){
+                    list[category].forEach(function(item){
+                        if (item && item.name && item.quantity) {
+                            addProductToList(item.name, item.quantity, category);
+                            console.log(`Ladattu tuote: ${item.name}, Määrä: ${item.quantity}, Kategoria: ${category}`);
+                        }
+                    });
+                }
+            }
+        }
+    }
+
+    // Lataa joululistanappi, joka lataa tuotteet JSON-tiedostosta
+    document.getElementById("loadProducts").addEventListener("click", function() {
+    fetch("products.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Verkkovirhe, tuotteiden lataaminen epäonnistui");
+            }
+            return response.json(); // Parsii JSON-datan
+        })
+        .then(data => {
+            data.forEach(item => {
+                addProductToList(item.name, item.quantity, item.category); // Lisää jokainen tuote listaan
+            });
+            saveList(); // Tallenna listan tila localStorageen
+        })
+        .catch(error => {
+            console.error("Virhe ladattaessa tuotteita:", error);
+            alert("Tuotteiden lataaminen epäonnistui.");
+        });
+});
+  
+
+</script>
+
+</body>
+</html>

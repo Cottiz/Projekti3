@@ -1,0 +1,276 @@
+[
+    {
+        "name": "Makaroni",
+        "quantity": 2,
+        "category": "Pastat_ja_riisit_ja_jauhot"
+    },
+    {
+        "name": "Puuroriisi",
+        "quantity": 1,
+        "category": "Pastat_ja_riisit_ja_jauhot"
+    },
+    {
+        "name": "Korppujauho",
+        "quantity": 1,
+        "category": "Pastat_ja_riisit_ja_jauhot"
+    },
+    {
+        "name": "Pähkinäsekoitus",
+        "quantity": 1,
+        "category": "Muut"
+    },
+    {
+        "name": "Manteli",
+        "quantity": 1,
+        "category": "Muut"
+    },
+    {
+        "name": "Rusinat",
+        "quantity": 1,
+        "category": "Muut"
+    },
+    {
+        "name": "Hillosipuli",
+        "quantity": 1,
+        "category": "Säilykkeet"
+    },
+    {
+        "name": "Luumuhillo",
+        "quantity": 2,
+        "category": "Säilykkeet"
+    },
+    {
+        "name": "Ketsuppi",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Sinappi, mieto",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Sinappi, makea",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Mustapippuri, kokonainen",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Neilikka, kokonainen",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Kaneli",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Valkopippuri, jauhettu",
+        "quantity": 1,
+        "category": "Leivonta_ja_mausteet"
+    },
+    {
+        "name": "Joulukinkku 7kg",
+        "quantity": 1,
+        "category": "Liha_ja_kala"
+    },
+    {
+        "name": "Juustoja erilaisia",
+        "quantity": 4,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Kylmäsavulohta 150-200g",
+        "quantity": 3,
+        "category": "Liha_ja_kala"
+    },
+    {
+        "name": "Perunalaatikko 400g",
+        "quantity": 2,
+        "category": "Muut"
+    },
+    {
+        "name": "Punajuurisalaatti 400g",
+        "quantity": 3,
+        "category": "Muut"
+    },
+    {
+        "name": "Voita 500g",
+        "quantity": 2,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Keiju, Maidoton margariini 400g",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Katkarapusalaatti, n. 400g",
+        "quantity": 1,
+        "category": "Liha_ja_kala"
+    },
+    {
+        "name": "Suolasieniä n. 200g",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Kahvi",
+        "quantity": 1,
+        "category": "Muut"
+    },
+    {
+        "name": "Joululimppu",
+        "quantity": 2,
+        "category": "Leivät_ja_leipomotuotteet"
+    },
+    {
+        "name": "Ruisleipä, ohut herkku 6kpl",
+        "quantity": 1,
+        "category": "Leivät_ja_leipomotuotteet"
+    },
+    {
+        "name": "Herneet, tölkki",
+        "quantity": 2,
+        "category": "Säilykkeet"
+    },
+    {
+        "name": "Torttutaikina 1 kg",
+        "quantity": 1,
+        "category": "Pakasteet"
+    },
+    {
+        "name": "Kurkku",
+        "quantity": 2,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Tomaatti",
+        "quantity": 6,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Lanttu 1,5kg",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Porkkanat 1kg",
+        "quantity": 2,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Mandariini",
+        "quantity": 6,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Maustekurkku",
+        "quantity": 12,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Peruna kiinteä 2kg",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Punajuuri",
+        "quantity": 5,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Sipuli",
+        "quantity": 4,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Sitruuna",
+        "quantity": 2,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Viinirypäle rasia, siemenetön",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Omenat, joulu",
+        "quantity": 4,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Kananmunat 10kpl",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Kinkkufolio",
+        "quantity": 1,
+        "category": "Taloustarvikkeet"
+    },
+    {
+        "name": "Leivinpaperiarkki",
+        "quantity": 1,
+        "category": "Taloustarvikkeet"
+    },
+    {
+        "name": "Alumiinifolio",
+        "quantity": 1,
+        "category": "Taloustarvikkeet"
+    },
+    {
+        "name": "Glögi, vaalea",
+        "quantity": 2,
+        "category": "Juomat"
+    },
+    {
+        "name": "Glögi, tumma",
+        "quantity": 1,
+        "category": "Juomat"
+    },
+    {
+        "name": "Siideri, omena",
+        "quantity": 6,
+        "category": "Juomat"
+    },
+    {
+        "name": "Olut",
+        "quantity": 12,
+        "category": "Juomat"
+    },
+    {
+        "name": "Pepsi 1,5l",
+        "quantity": 4,
+        "category": "Juomat"
+    },
+    {
+        "name": "Kuohukerma 2dl",
+        "quantity": 4,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Rasvaton maito 1l",
+        "quantity": 4,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Kevytmaito 1l",
+        "quantity": 2,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Punainen maito 1l",
+        "quantity": 3,
+        "category": "Maitotuotteet"
+    }
+
+
+
+
+]
