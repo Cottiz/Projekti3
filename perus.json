@@ -1,0 +1,163 @@
+[
+    {
+        "name": "Kevytmaito 1l",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Rasvaton maito 1l",
+        "quantity": 3,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "ORZO pussi",
+        "quantity": 2,
+        "category": "Pastat_ja_riisit_ja_jauhot"
+    },
+    {
+        "name": "Joulukinkku, leivälle n.200g",
+        "quantity": 1,
+        "category": "Liha_ja_kala"
+    },
+    {
+        "name": "Luumuhillo tai muu torttuhillo",
+        "quantity": 1,
+        "category": "Säilykkeet"
+    },
+    {
+        "name": "Oivariini 400g",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Joululimppu",
+        "quantity": 2,
+        "category": "Leivät_ja_leipomotuotteet"
+    },
+    {
+        "name": "Ruisleipä, ohut herkku 6kpl",
+        "quantity": 1,
+        "category": "Leivät_ja_leipomotuotteet"
+    },
+    {
+        "name": "Torttutaikina 500g",
+        "quantity": 1,
+        "category": "Pakasteet"
+    },
+    {
+        "name": "Kurkku",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Tomaatti",
+        "quantity": 8,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Porkkanat 1kg",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Peruna, iso",
+        "quantity": 10,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Sipuli",
+        "quantity": 2,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Paprika",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Parsa",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Kananmunat 10kpl",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Kuohukerma 2dl",
+        "quantity": 5,
+        "category": "Maitotuotteet"
+    },
+    {   
+        "name": "Valkosipuli",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {   
+        "name": "Pizzajuustoraaste iso pussi",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {   
+        "name": "Cokis 1,5l tai 0,33 tölkki",
+        "quantity": 2,
+        "category": "Juomat"
+    },
+    {   
+        "name": "Pekonia paketti",
+        "quantity": 1,
+        "category": "Liha_ja_kala"
+    },
+    {   
+        "name": "pippurikerma 2 dl",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {   
+        "name": "Tuoremehu 1l",
+        "quantity": 1,
+        "category": "Juomat"
+    },
+    
+    {   
+        "name": "Jauheliha 400g",
+        "quantity": 1,
+        "category": "Liha_ja_kala"
+    }, 
+    {
+        "name": "Tortillat 6kpl",
+        "quantity": 1,
+        "category": "Pastat_ja_riisit_ja_jauhot"
+    },
+    {
+        "name": "Salsa",
+        "quantity": 1,
+        "category": "Säilykkeet"
+    },
+    {
+        "name": "Avocado",
+        "quantity": 3,
+        "category": "Vihannekset_ja_hedelmät"
+    },
+    {
+        "name": "Ranskankerma 2dl",
+        "quantity": 2,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Cheddarjuustokastike",
+        "quantity": 1,
+        "category": "Maitotuotteet"
+    },
+    {
+        "name": "Salaatti",
+        "quantity": 1,
+        "category": "Vihannekset_ja_hedelmät"
+    }
+    
+    
+   
+
+
+]
