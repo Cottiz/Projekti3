@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // Näytä tai piilota kuva klikkaamalla kategoriaotsikkoa
+    // Näyttää tai piilottaa kuvan klikkaamalla kategoriaotsikkoa
     $(".category-card h3").click(function() {
         $(this).siblings("img").slideToggle(500); // Näyttää/piilottaa kuvan liukuefektillä
     });
@@ -11,13 +11,14 @@ $(document).ready(function(){
         let quantity = parseInt($("#quantityInput").val(), 10);
         let category = $("#categorySelect").val();
 
-        if(product && category !== "Valitse luokka" && quantity > 0) {
+        // Tyhjentää kentät jos tuote lisätty onnistuneesti
+        if(product && category !== "Valitse kategoria" && quantity > 0) {
             addProductToList(product, quantity, category);
             saveList();
             console.log(`Tuote lisätty: ${product}, Määrä: ${quantity}, Kategoria: ${category}`);
             $("#productInput").val('');
             $("#quantityInput").val('1');
-            $("#categorySelect").val('Valitse luokka');
+            $("#categorySelect").val('Valitse kategoria');
         } else {
             alert('Hupsis! Taisit unohtaa täyttää kentät huolellisesti!');
         }
@@ -26,18 +27,17 @@ $(document).ready(function(){
     
     // Poista valitut tuotteet kategoriasta
     $(".remove-selected").click(function(){
-        let category = $(this).closest(".category-card").attr("id");
         $(this).siblings(".product-list").find("input[type='checkbox']:checked").each(function(){
             $(this).closest(".product-item").fadeOut(2000, function(){ // Poistetaan tuote hitaasti FadeOut-menetelmällä
                 $(this).remove();
             });
         });
-        saveList();
+        saveList(); // Tallenna muutokset
     });
 });
 
 function addProductToList(product, quantity, category){
-    // Luo tuote-elementti piilotettuna
+    // Luo tuotteen HTML-elementin (div-elementin)
     let productItem = $(`
         <div class="product-item" style="display: none;">
             <input type="checkbox" class="mr-2">
@@ -49,29 +49,34 @@ function addProductToList(product, quantity, category){
     $(`#${category} .product-list`).append(productItem);
     productItem.fadeIn(2000); // hidas fadeIn-efekti 2000millisekuntia
 }
-    
 
-function saveList(){
-    let list = {};
-    $(".category-card").each(function(){
-        let category = $(this).attr('id');
-        list[category] = [];
-        $(this).find(".product-item").each(function(){
-            let productText = $(this).find("span").text();
-            let [product, quantityText] = productText.split(" (");
-            let quantity = parseInt(quantityText);
-            list[category].push({ name: product.trim(), quantity: quantity });
+// Tallentaa ostoslistan localStorageen
+function saveList() {
+    try {
+        let list = {};
+        $(".category-card").each(function() {
+            let category = $(this).attr('id');
+            list[category] = [];
+            $(this).find(".product-item").each(function() {
+                let productText = $(this).find("span").text();
+                let [product, quantityText] = productText.split(" (");
+                let quantity = parseInt(quantityText);
+                list[category].push({ name: product.trim(), quantity: quantity });
+            });
         });
-    });
-    localStorage.setItem('shoppingList', JSON.stringify(list));
+        localStorage.setItem('shoppingList', JSON.stringify(list));
+    } catch (error) {
+        console.error("Error saving list to localStorage:", error);
+    }
 }
 
-function loadList(){
-    let list = JSON.parse(localStorage.getItem('shoppingList'));
-    if(list){
-        for(let category in list){
-            if (Array.isArray(list[category])){
-                list[category].forEach(function(item){
+// Lataa ostoslistan localStoragesta
+function loadList() {
+    try {
+        let list = JSON.parse(localStorage.getItem('shoppingList')) || {};
+        for (let category in list) {
+            if (Array.isArray(list[category])) {
+                list[category].forEach(function(item) {
                     if (item && item.name && item.quantity) {
                         addProductToList(item.name, item.quantity, category);
                         console.log(`Ladattu tuote: ${item.name}, Määrä: ${item.quantity}, Kategoria: ${category}`);
@@ -79,48 +84,38 @@ function loadList(){
                 });
             }
         }
+    } catch (error) {
+        console.error("Error loading list from localStorage:", error);
     }
 }
 
-// Lataa joululistanappi, joka lataa tuotteet JSON-tiedostosta
-document.getElementById("loadProducts").addEventListener("click", function() {
-fetch("products.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Verkkovirhe, tuotteiden lataaminen epäonnistui");
-        }
-        return response.json(); // Parsii JSON-datan
-    })
-    .then(data => {
-        data.forEach(item => {
-            addProductToList(item.name, item.quantity, item.category); // Lisää jokainen tuote listaan
+// Hakee ja lataa tuotteet JSON-tiedostosta
+function fetchAndLoadProducts(url) {
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Verkkovirhe, tuotteiden lataaminen epäonnistui");
+            }
+            return response.json(); // Parsii JSON-datan
+        })
+        .then(products => {
+            products.forEach(item => {
+                addProductToList(item.name, item.quantity, item.category); // Lisää jokainen tuote listaan
+            });
+            saveList(); // Tallenna listan tila localStorageen
+        })
+        .catch(error => {
+            console.error(`Virhe ladattaessa tuotteita (${url}):`, error);
+            alert("Tuotteiden lataaminen epäonnistui.");
         });
-        saveList(); // Tallenna listan tila localStorageen
-    })
-    .catch(error => {
-        console.error("Virhe ladattaessa tuotteita:", error);
-        alert("Tuotteiden lataaminen epäonnistui.");
-    });
+}
 
+// Joululistanappi, joka lataa tuotteet JSON-tiedostosta
+document.getElementById("loadProducts").addEventListener("click", function() {
+    fetchAndLoadProducts("json/products.json");
 });
 
-// Lataa peruslistanappi, joka lataa tuotteet JSON-tiedostosta
+// Peruslistanappi, joka lataa tuotteet JSON-tiedostosta
 document.getElementById("loadPerus").addEventListener("click", function() {
-fetch("perus.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Verkkovirhe, tuotteiden lataaminen epäonnistui");
-        }
-        return response.json(); // Parsii JSON-datan
-    })
-    .then(data => {
-        data.forEach(item => {
-            addProductToList(item.name, item.quantity, item.category); // Lisää jokainen tuote listaan
-        });
-        saveList(); // Tallenna listan tila localStorageen
-    })
-    .catch(error => {
-        console.error("Virhe ladattaessa tuotteita:", error);
-        alert("Tuotteiden lataaminen epäonnistui.");
-    });
+    fetchAndLoadProducts("json/perus.json");
 });
