@@ -3,11 +3,11 @@ Ostoslista
 
 ## Linkki sovellukseen:
 Sovelluksen voi avata tästä linkistä: 
-GitHub: [Ostoslista](https://)
-Netlify: [Ostoslista](https://)
+GitHub: [Ostoslista](https://cottiz.github.io/Projekti3)
+Netlify: [Ostoslista](https://lucky-otter-04c574.netlify.app/)
 
 ## Työntekeminen
-Projekti valmistui noin 20 tunnissa. Työstin projektia itsenäisesti hyödyntäen osittain tekoälyä. 
+Projekti valmistui noin 25 tunnissa. Työstin projektia itsenäisesti hyödyntäen osittain tekoälyä. 
 
 
 ## Sisällysluettelo:
@@ -27,21 +27,20 @@ Ostoslista on sovellus, johon voi lisätä tuotteita kategorioittain. Sovellus h
 
 ## Kuvakaappaukset
 Tässä kuvakaappaus sovelluksesta: 
-![Sovelluksen kuvakaappaus](Ostoslista.png)
-![Sovelluksen kuvakaappaus](Ostoslista1.png)
+![Sovelluksen kuvakaappaus](img/Ostoslista.png)
+![Sovelluksen kuvakaappaus](img/Ostoslista1.png)
 
 
 ## Teknologiat
 Projektissa käytin seuraavia teknologioita:
 - HTML: sivuston rakenteen toteuttaminen
 - Bootstrap ja CSS: Visuaalisen ulkoasun ja tyylin luominen
-- JavaScript: Tietojen hakuun JSON-tiedostosta ja toiminnallisuuksiin toteutus.
+- JavaScript: Tietojen haku JSON-tiedostosta ja toiminnallisuuksien toteutus.
 - DALL-E: kuvien luominen
 
 ## Asennus ja käynnistys
-- lataa tai kloonaa repository
-- varmista, että JSON-tiedosto on samassa juurikansiossa
-- avaa index.html selaimellasi
+1. Lataa tai kloonaa repository
+2. Suorita sovellus Live Serverin kautta
 
 ## Toteutustapa
 - Tuotteen lisääminen ja poistaminen: Tuotteita voi lisätä ja poistaa yksinkertaisilla napin painalluksilla.
@@ -54,7 +53,7 @@ Projektissa käytin seuraavia teknologioita:
 ## Projektin tila
 Sovellus on valmis perusversio. Mahdollisia lisäominaisuuksia versioon 2:
 - Kaikkien ostoslistojen tyhjennys: Napin painalluksella kaikki tuotteet tyhjennetään ja localStorage tyhjenee.
-- Teemalliset ostoslistat JSON-tiedostoista: Erilaisia teemalistoja, kuten kesän grillijuhlat tai pikkujoulut, jotka voi ladata tarpeen mukaan.
+- Teemalliset ostoslistat JSON-tiedostoista: Erilaisia teemalistoja, kuten kesän grillijuhlat, tex-mex lista jne., jotka voi ladata tarpeen mukaan.
 
 ## Lähteet
 Projektissa käytetyt lähteet ja apuvälineet:
