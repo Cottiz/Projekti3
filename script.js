@@ -47,7 +47,7 @@ function addProductToList(product, quantity, category){
     
     // Lisää tuote listaan ja käynnistä fadeIn-efekti
     $(`#${category} .product-list`).append(productItem);
-    productItem.fadeIn(2000); // hidas fadeIn-efekti 2000millisekuntia
+    productItem.fadeIn(2000); // hidas fadeIn-efekti 2000 millisekuntia
 }
 
 // Tallentaa ostoslistan localStorageen
